@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
         ]
     };
 
+    // Emoticonos según la clasificación
+    const emojis = {
+        'Buena': '😊',
+        'Moderada': '😐',
+        'Dañina a la salud para algunos grupos sensibles': '😷',
+        'Dañina para la salud': '😵',
+        'Muy dañina para la salud': '🤢',
+        'Peligrosa': '☠️'
+    };
+
     // Cargar datos de sensores y clasificaciones
     Promise.all([
         fetch('sensors.json').then(response => response.json()),
@@ -96,6 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Desplazar la página al contenedor de sugerencias
                 suggestionBox.scrollIntoView({ behavior: 'smooth' });
+
+                // Mostrar el emoticono correspondiente a la clasificación
+                var emojiContainer = document.getElementById('emojiContainer');
+                var classificationEmoji = document.getElementById('classificationEmoji');
+                var emojiText = document.createElement('p');
+                emojiText.classList.add('emoji-text'); // Clase CSS para estilizar el texto del emoticono
+
+                if (emojis[classification]) {
+                    classificationEmoji.src = `./emojis/${classification}.png`; // Cambia la ruta según tus imágenes de emoticonos
+                    classificationEmoji.classList.remove('d-none');
+                    emojiContainer.innerHTML = ''; // Limpiar el contenido previo
+                    emojiText.textContent = emojis[classification];
+                    emojiContainer.appendChild(classificationEmoji);
+                    emojiContainer.appendChild(emojiText);
+                } else {
+                    classificationEmoji.classList.add('d-none');
+                    emojiText.textContent = 'No hay emoticono para esta clasificación.';
+                    emojiContainer.innerHTML = '';
+                    emojiContainer.appendChild(emojiText);
+                }
             });
         });
     })
