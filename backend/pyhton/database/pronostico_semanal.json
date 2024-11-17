@@ -1,0 +1,26 @@
+[
+    {
+        "fecha": "2024-11-16",
+        "categoria_predicha": "Moderada",
+        "detalle": "Pronóstico basado en los datos de 2024-11-09",
+        "recomendaciones": "Recomendaciones para el día: Se recomienda reducir levemente actividades al aire libre"
+    },
+    {
+        "fecha": "2024-11-17",
+        "categoria_predicha": "Moderada",
+        "detalle": "Pronóstico basado en los datos de 2024-11-10",
+        "recomendaciones": "Recomendaciones para el día: Se recomienda reducir levemente actividades al aire libre"
+    },
+    {
+        "fecha": "2024-11-18",
+        "categoria_predicha": "Buena",
+        "detalle": "Pronóstico basado en los datos de 2024-11-11",
+        "recomendaciones": "Recomendaciones para el día: No se requieren medidas adicionales"
+    },
+    {
+        "fecha": "2024-11-19",
+        "categoria_predicha": "Moderada",
+        "detalle": "Pronóstico basado en los datos de 2024-11-12",
+        "recomendaciones": "Recomendaciones para el día: Se recomienda reducir levemente actividades al aire libre"
+    }
+]
